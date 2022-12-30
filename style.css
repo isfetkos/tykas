@@ -1,0 +1,197 @@
+:root {
+  --clr-purple:#8D629C;
+  --clr-pink:#ED8D8D;
+  --clr-lpink:#EDC6C6;
+  --clr-white:#FCF0F6;
+  --clr-lgreen:#82CFB9;
+
+
+  --gray:#2A2A2A;
+  --dark-gray:#121212;
+  --light-gray:#4D4D4D;
+  --ff-body: 'Source Sans Pro';
+  --ff-heading: 'Oi';
+  --ff-play:'Play';
+
+
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin, padding and do all h etc. standard*/
+* {
+  margin: 0;
+  padding: 0;
+  font:inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+html, body {
+  height:100%;
+  font-family: var(--ff-body);
+  background-color: var(--clr-pink);
+}
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* nav-bar */
+.logo {
+  max-width: 100%;
+  min-width: 15px;
+}
+
+.container {
+  min-width: 100vw;
+  max-width: 100vw;
+  min-height: 150px;
+  background-color: var(--clr-purple);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left:20px;
+  padding-right:40px;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+.toggle-menu {
+  display:none;
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.hamburger-slim {
+  background: transparent;
+  position: relative;
+  height: 30px;
+  width: 50px;
+}
+.hamburger-slim:before, .hamburger-slim:after {
+  background: #fff;
+  backface-visibility: hidden;
+  content: "";
+  height: 2px;
+  transition: 0.75s;
+  width: 50px;
+}
+.hamburger-slim:before {
+  box-shadow: #fff 0 14px 0 0;
+  position: absolute;
+  top: 0;
+}
+.hamburger-slim:after {
+  position: absolute;
+  top: calc(100% - 2px);
+}
+.hamburger-slim:hover:before {
+  box-shadow: transparent 0 0 0 0;
+  top: 50%;
+  transform: rotate(225deg);
+  background: var(--clr-lpink);
+}
+.hamburger-slim:hover:after {
+  top: 50%;
+  transform: rotate(315deg);
+  background: var(--clr-lpink);
+}
+
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+  list-style: none;
+  text-decoration: none;
+  color:var(--clr-lpink);
+  font-weight: 400;
+  font-size: 1.5em;
+  border-color: #ED8D8D;
+}
+.nav-list li:hover {
+  color:var(--clr-pink);
+}
+.l1 {
+  display: flex;
+  gap:10px;
+  }
+.l1 span {
+  margin-top: 8px;
+  animation: bounce 2.2s infinite;
+}
+/* fade in of container */
+.container {
+  opacity: 0; /* make the logo initially transparent */
+  transition: opacity 0.5s; /* add a transition effect for the opacity property */
+}
+
+.container.fade-in {
+  opacity: 1; /* make the logo fully opaque */
+}
+
+/* bounce function */ 
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1000px) {
+
+.nav-list {
+  display: none; /* hide the nav list on mobile devices */
+  font-size: 0.9em;
+}
+.hamburger-slim {
+  scale: 80%;
+}
+.toggle-menu {
+  display: flex; /* show the toggle button on mobile devices */
+}
+.logo {
+  width: 80%;
+}
+}
+
+.nav-list-deactive {
+  display: none;
+  flex-direction: row;
+}
