@@ -100,7 +100,7 @@ svg {
   width: 50px;
 }
 .hamburger-slim:before, .hamburger-slim:after {
-  background: #fff;
+  background: var(--clr-lpink);
   backface-visibility: hidden;
   content: "";
   height: 2px;
@@ -108,24 +108,40 @@ svg {
   width: 50px;
 }
 .hamburger-slim:before {
-  box-shadow: #fff 0 14px 0 0;
+  box-shadow: var(--clr-lpink) 0 14px 0 0;
   position: absolute;
   top: 0;
 }
 .hamburger-slim:after {
   position: absolute;
   top: calc(100% - 2px);
+  background: var(--clr-lpink);
 }
-.hamburger-slim:hover:before {
+/* Animation when hovering */
+.hamburger-slim:hover:before{
   box-shadow: transparent 0 0 0 0;
   top: 50%;
   transform: rotate(225deg);
-  background: var(--clr-lpink);
+  background: var(--clr-pink);
 }
 .hamburger-slim:hover:after {
   top: 50%;
   transform: rotate(315deg);
-  background: var(--clr-lpink);
+  background: var(--clr-pink);
+}
+
+/* Applies animation after clicking and switching between hamburger and X */pa
+.toggle-button.collapsed:before {
+  box-shadow: transparent 0 0 0 0;
+  top: 50%;
+  transform: rotate(225deg);
+  background: var(--clr-pink);
+}
+
+.toggle-button.collapsed:after {
+  top: 50%;
+  transform: rotate(315deg);
+  background: var(--clr-pink);
 }
 
 
@@ -178,7 +194,7 @@ svg {
 
 .nav-list {
   display: none; /* hide the nav list on mobile devices */
-  font-size: 0.9em;
+  font-size: 1.2em;
 }
 .hamburger-slim {
   scale: 80%;
